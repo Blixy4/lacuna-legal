@@ -152,4 +152,13 @@ html.app .updated{margin:0;background:none;border:0;padding:0;color:var(--muted)
 html.app .wrap.in-hero{padding:0}
 html.app .toc{margin-top:18px}
 
+/* pull down to refresh (inside the app only) */
+html.app{overscroll-behavior-y:contain}
+.ptr{position:fixed;left:50%;top:0;z-index:50;width:42px;height:42px;margin-left:-21px;border-radius:50%;display:none;align-items:center;justify-content:center;
+  background:var(--panel);border:1px solid var(--rule);box-shadow:0 6px 18px rgba(8,18,48,.25);transform:translateY(-60px);opacity:0;pointer-events:none}
+html.app .ptr{display:flex}
+.ptr i{display:block;width:20px;height:20px;border-radius:50%;border:3px solid var(--rule);border-top-color:var(--primary)}
+.ptr.spin i{animation:ptr-spin .7s linear infinite}
+@keyframes ptr-spin{to{transform:rotate(360deg)}}
+
 @media print{.hero-bg,.topbar,footer,.toc{display:none}.hero{background:none;color:#000}body{background:#fff;color:#000}body:before{display:none}section{break-inside:avoid}}
