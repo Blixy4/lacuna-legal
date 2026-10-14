@@ -4,30 +4,40 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="index,follow">
+<meta name="theme-color" content="#14347A">
 <meta name="description" content="Application de préparation aux examens nationaux du Burundi, éditée par HelixNova Inc.">
 <script>
 (function(){
   var d=document.documentElement,q=new URLSearchParams(location.search);
-  if(q.get("app")==="1")d.className="app";
+  d.className="js"+(q.get("app")==="1"?" app":"");
   var t=q.get("theme");
   if(t==="dark"||t==="light")d.setAttribute("data-theme",t);
 })();
 </script>
 <title>Documents officiels | Lacuna</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top"><div class="wrap">
-<a class="brand" href="index.html"><span class="mark">L</span>Lacuna</a><nav><a href="privacy.html">Confidentialité</a><a href="terms.html">Conditions</a><a href="delete-account.html">Suppression</a></nav>
-</div></header>
-<main class="wrap"><div class="page">
+<header class="hero">
+<div class="hero-bg"></div>
+<div class="wrap in-hero">
+<div class="topbar">
+<a class="brand" href="index.html"><img src="logo.png" width="44" height="44" alt="">Lacuna</a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="bars"></span><span>Menu</span></button>
+<nav id="menu" class="menu" aria-label="Navigation"><a href="privacy.html">Confidentialité</a><a href="terms.html">Conditions</a><a href="delete-account.html">Suppression du compte</a><a href="mailto:helixnovaepassburundi@gmail.com?subject=Lacuna">Nous contacter</a></nav>
+</div>
 <div class="title">
 <p class="eyebrow">Lacuna</p>
 <h1>Documents officiels</h1>
 <p class="lead">Application de préparation aux examens nationaux du Burundi, éditée par HelixNova Inc.</p>
 
 </div>
+</div>
+</header>
+<main class="wrap"><div class="page">
 <div class="docs">
 <a href="privacy.html"><b>Politique de confidentialité</b><span>Données collectées, finalités, hébergement, durée de conservation et droits des Utilisateurs.</span><em>Lire le document</em></a>
 <a href="terms.html"><b>Conditions d'utilisation</b><span>Règles d'accès et d'utilisation, propriété intellectuelle et limites de responsabilité.</span><em>Lire le document</em></a>
@@ -35,8 +45,9 @@
 </div>
 </div></main>
 <footer><div class="wrap">
-<p>&copy; <span id="year">2026</span> HelixNova Inc. Tous droits réservés.</p>
-<nav><a href="privacy.html">Confidentialité</a><a href="terms.html">Conditions</a><a href="delete-account.html">Suppression</a><a href="mailto:helixnovaepassburundi@gmail.com?subject=Lacuna">Nous contacter</a></nav>
+<div class="f-brand"><img src="logo.png" width="52" height="52" alt=""><div><b>Lacuna</b><span>Préparation aux examens nationaux du Burundi</span></div></div>
+<nav class="f-links" aria-label="Liens"><a href="privacy.html">Confidentialité</a><a href="terms.html">Conditions</a><a href="delete-account.html">Suppression</a><a href="mailto:helixnovaepassburundi@gmail.com?subject=Lacuna">Nous contacter</a></nav>
+<p class="f-copy">&copy; <span id="year">2026</span> HelixNova Inc. Tous droits réservés.</p>
 </div></footer>
 <script>
 (function(){
@@ -44,6 +55,13 @@
   if(y)y.textContent=new Date().getFullYear();
   var t=document.querySelector("details.toc");
   if(t&&window.matchMedia&&window.matchMedia("(min-width:1040px)").matches)t.open=true;
+  var b=document.querySelector(".menu-btn"),m=document.getElementById("menu");
+  if(!b||!m)return;
+  function set(o){m.classList.toggle("open",o);b.setAttribute("aria-expanded",o?"true":"false");}
+  b.addEventListener("click",function(e){e.stopPropagation();set(!m.classList.contains("open"));});
+  document.addEventListener("click",function(e){if(!m.contains(e.target))set(false);});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false);});
+  m.addEventListener("click",function(e){if(e.target.closest("a"))set(false);});
 })();
 </script>
 </body>

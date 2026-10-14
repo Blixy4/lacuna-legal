@@ -4,38 +4,49 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="index,follow">
+<meta name="theme-color" content="#14347A">
 <meta name="description" content="Procédure à suivre pour supprimer définitivement un compte Lacuna et les données associées.">
 <script>
 (function(){
   var d=document.documentElement,q=new URLSearchParams(location.search);
-  if(q.get("app")==="1")d.className="app";
+  d.className="js"+(q.get("app")==="1"?" app":"");
   var t=q.get("theme");
   if(t==="dark"||t==="light")d.setAttribute("data-theme",t);
 })();
 </script>
 <title>Suppression du compte et des données | Lacuna</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top"><div class="wrap">
-<a class="brand" href="index.html"><span class="mark">L</span>Lacuna</a><nav><a href="privacy.html">Confidentialité</a><a href="terms.html">Conditions</a><a href="delete-account.html" aria-current="page">Suppression</a></nav>
-</div></header>
-<main class="wrap"><div class="page">
+<header class="hero">
+<div class="hero-bg"></div>
+<div class="wrap in-hero">
+<div class="topbar">
+<a class="brand" href="index.html"><img src="logo.png" width="44" height="44" alt="">Lacuna</a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="bars"></span><span>Menu</span></button>
+<nav id="menu" class="menu" aria-label="Navigation"><a href="privacy.html">Confidentialité</a><a href="terms.html">Conditions</a><a href="delete-account.html" aria-current="page">Suppression du compte</a><a href="mailto:helixnovaepassburundi@gmail.com?subject=Lacuna">Nous contacter</a></nav>
+</div>
 <div class="title">
 <p class="eyebrow">Procédure officielle</p>
 <h1>Suppression du compte et des données</h1>
 <p class="lead">Procédure à suivre pour supprimer définitivement un compte Lacuna et les données associées.</p>
 <p class="updated">Dernière mise à jour : 14 octobre 2026</p>
 </div>
-<details class="toc"><summary>Sommaire</summary><ol><li><a href="#a1">Suppression depuis l&#x27;application</a></li><li><a href="#a2">Données supprimées</a></li><li><a href="#a3">Données présentes sur l&#x27;appareil</a></li><li><a href="#a4">Demande par courrier électronique</a></li></ol></details><article><section id="a1"><h2><span class="n">Article 1</span>Suppression depuis l&#x27;application</h2><p class="step">Étape 1. Ouvrir Lacuna et accéder à l&#x27;onglet Profil.</p><p class="step">Étape 2. Dans le groupe Compte et assistance, sélectionner Supprimer mon compte.</p><p class="step">Étape 3. Confirmer. Le compte et les données associées sont supprimés immédiatement.</p></section>
-<section id="a2"><h2><span class="n">Article 2</span>Données supprimées</h2><p>Sont effacés des serveurs de l&#x27;Éditeur : les réponses, les épreuves terminées, les signalements, le profil (prénom, nom, date de naissance, genre, classe, section, DPE, DCE) et le compte de connexion (adresse e-mail et mot de passe).</p><p>Aucune copie n&#x27;est conservée. La suppression est définitive et ne peut pas être annulée.</p></section>
-<section id="a3"><h2><span class="n">Article 3</span>Données présentes sur l&#x27;appareil</h2><p>L&#x27;application efface également les données stockées sur l&#x27;appareil au moment de la suppression. La désinstallation de Lacuna sans suppression préalable du compte ne supprime pas les données conservées sur les serveurs.</p></section>
-<section id="a4"><h2><span class="n">Article 4</span>Demande par courrier électronique</h2><p>Lorsque l&#x27;accès à l&#x27;application n&#x27;est plus possible, la demande de suppression est adressée à l&#x27;Éditeur par le lien « <a href="mailto:helixnovaepassburundi@gmail.com?subject=Lacuna">Nous contacter</a> », depuis l&#x27;adresse électronique associée au compte, avec pour objet « Suppression de compte Lacuna ».</p><p>Un parent ou un tuteur légal peut présenter la même demande pour un enfant mineur.</p></section></article>
+</div>
+</header>
+<main class="wrap"><div class="page">
+<details class="toc"><summary>Sommaire</summary><ol><li><a href="#a1">Suppression depuis l&#x27;application</a></li><li><a href="#a2">Données supprimées</a></li><li><a href="#a3">Données présentes sur l&#x27;appareil</a></li><li><a href="#a4">Demande par courrier électronique</a></li></ol></details><article><section id="a1"><h2><span class="n">Section 1</span>Suppression depuis l&#x27;application</h2><p class="step">Étape 1. Ouvrir Lacuna et accéder à l&#x27;onglet Profil.</p><p class="step">Étape 2. Dans le groupe Compte et assistance, sélectionner Supprimer mon compte.</p><p class="step">Étape 3. Confirmer. Le compte et les données associées sont supprimés immédiatement.</p></section>
+<section id="a2"><h2><span class="n">Section 2</span>Données supprimées</h2><p>Sont effacés des serveurs de l&#x27;Éditeur : les réponses, les épreuves terminées, les signalements, le profil (prénom, nom, date de naissance, genre, classe, section, DPE, DCE) et le compte de connexion (adresse e-mail et mot de passe).</p><p>Aucune copie n&#x27;est conservée. La suppression est définitive et ne peut pas être annulée.</p></section>
+<section id="a3"><h2><span class="n">Section 3</span>Données présentes sur l&#x27;appareil</h2><p>L&#x27;application efface également les données stockées sur l&#x27;appareil au moment de la suppression. La désinstallation de Lacuna sans suppression préalable du compte ne supprime pas les données conservées sur les serveurs.</p></section>
+<section id="a4"><h2><span class="n">Section 4</span>Demande par courrier électronique</h2><p>Lorsque l&#x27;accès à l&#x27;application n&#x27;est plus possible, la demande de suppression est adressée à l&#x27;Éditeur par le lien « <a href="mailto:helixnovaepassburundi@gmail.com?subject=Lacuna">Nous contacter</a> », depuis l&#x27;adresse électronique associée au compte, avec pour objet « Suppression de compte Lacuna ».</p><p>Un parent ou un tuteur légal peut présenter la même demande pour un enfant mineur.</p></section></article>
 </div></main>
 <footer><div class="wrap">
-<p>&copy; <span id="year">2026</span> HelixNova Inc. Tous droits réservés.</p>
-<nav><a href="privacy.html">Confidentialité</a><a href="terms.html">Conditions</a><a href="delete-account.html">Suppression</a><a href="mailto:helixnovaepassburundi@gmail.com?subject=Lacuna">Nous contacter</a></nav>
+<div class="f-brand"><img src="logo.png" width="52" height="52" alt=""><div><b>Lacuna</b><span>Préparation aux examens nationaux du Burundi</span></div></div>
+<nav class="f-links" aria-label="Liens"><a href="privacy.html">Confidentialité</a><a href="terms.html">Conditions</a><a href="delete-account.html">Suppression</a><a href="mailto:helixnovaepassburundi@gmail.com?subject=Lacuna">Nous contacter</a></nav>
+<p class="f-copy">&copy; <span id="year">2026</span> HelixNova Inc. Tous droits réservés.</p>
 </div></footer>
 <script>
 (function(){
@@ -43,6 +54,13 @@
   if(y)y.textContent=new Date().getFullYear();
   var t=document.querySelector("details.toc");
   if(t&&window.matchMedia&&window.matchMedia("(min-width:1040px)").matches)t.open=true;
+  var b=document.querySelector(".menu-btn"),m=document.getElementById("menu");
+  if(!b||!m)return;
+  function set(o){m.classList.toggle("open",o);b.setAttribute("aria-expanded",o?"true":"false");}
+  b.addEventListener("click",function(e){e.stopPropagation();set(!m.classList.contains("open"));});
+  document.addEventListener("click",function(e){if(!m.contains(e.target))set(false);});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false);});
+  m.addEventListener("click",function(e){if(e.target.closest("a"))set(false);});
 })();
 </script>
 </body>
