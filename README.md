@@ -5,7 +5,7 @@ Static pages shown inside the app (webview) and linked from the Play Console.
 - `privacy.html`: politique de confidentialité
 - `terms.html`: conditions d'utilisation
 - `delete-account.html`: how to delete the account and the data
-- `index.html`, `style.css`
+- `index.html`, `style.css`, `fonts/` (Fraunces and Manrope, self-hosted, SIL Open Font License, no outside requests)
 
 ## Publish on GitHub Pages
 

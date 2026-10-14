@@ -1,25 +1,87 @@
-:root{--bg:#F1F5FD;--surface:#fff;--ink:#0F1A33;--muted:#4F5C79;--primary:#2350AD;--soft:#DCE7FB;--border:#D7E1F3}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#000;--surface:#0C0C0F;--ink:#F3F5FA;--muted:#A9AEBD;--primary:#5F8FF2;--soft:#0D1B3D;--border:#27272F}}
-:root[data-theme=dark]{--bg:#000;--surface:#0C0C0F;--ink:#F3F5FA;--muted:#A9AEBD;--primary:#5F8FF2;--soft:#0D1B3D;--border:#27272F}
+@font-face{font-family:"Fraunces";font-weight:600;font-style:normal;font-display:swap;src:url(fonts/fraunces-600.woff2) format("woff2")}
+@font-face{font-family:"Fraunces";font-weight:700;font-style:normal;font-display:swap;src:url(fonts/fraunces-700.woff2) format("woff2")}
+@font-face{font-family:"Manrope";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/manrope-400.woff2) format("woff2")}
+@font-face{font-family:"Manrope";font-weight:600;font-style:normal;font-display:swap;src:url(fonts/manrope-600.woff2) format("woff2")}
+@font-face{font-family:"Manrope";font-weight:700;font-style:normal;font-display:swap;src:url(fonts/manrope-700.woff2) format("woff2")}
+
+:root{
+  --bg:#F1F5FD;--surface:#FFFFFF;--ink:#0F1A33;--muted:#4F5C79;
+  --primary:#2350AD;--soft:#DCE7FB;--border:#D7E1F3;--gold:#9A6200;--goldsoft:#FAEFD3;
+  --g1:#2D63CF;--g2:#14347A;--shadow:0 1px 2px rgba(15,26,51,.06),0 8px 24px rgba(15,26,51,.06);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#000;--surface:#0C0C0F;--ink:#F3F5FA;--muted:#A9AEBD;
+  --primary:#7FA5F7;--soft:#0D1B3D;--border:#27272F;--gold:#F5C451;--goldsoft:#2A210B;
+  --g1:#1B3F8F;--g2:#0B1E4A;--shadow:none}}
+:root[data-theme=dark]{
+  --bg:#000;--surface:#0C0C0F;--ink:#F3F5FA;--muted:#A9AEBD;
+  --primary:#7FA5F7;--soft:#0D1B3D;--border:#27272F;--gold:#F5C451;--goldsoft:#2A210B;
+  --g1:#1B3F8F;--g2:#0B1E4A;--shadow:none}
+
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;background:var(--bg);color-scheme:light dark}
+html{-webkit-text-size-adjust:100%;background:var(--bg);color-scheme:light dark;scroll-behavior:smooth}
 html[data-theme=light]{color-scheme:light}
 html[data-theme=dark]{color-scheme:dark}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.wrap{max-width:720px;margin:0 auto;padding:20px 16px 56px}
-header.site{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:6px 0 18px}
-.brand{font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:22px;color:var(--primary);text-decoration:none;letter-spacing:.2px}
-nav a{color:var(--muted);text-decoration:none;font-size:14px;margin-left:14px}
-nav a:hover,nav a[aria-current]{color:var(--primary)}
-h1{font-family:Georgia,"Times New Roman",serif;font-size:28px;line-height:1.2;margin:8px 0 6px}
-h2{font-family:Georgia,"Times New Roman",serif;font-size:19px;line-height:1.3;margin:30px 0 8px}
-.updated{color:var(--muted);font-size:14px;margin:0 0 22px}
-p{margin:0 0 12px}
-a{color:var(--primary)}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:6px 18px 18px}
-.steps{padding-left:22px}
-.steps li{margin:8px 0}
-.note{background:var(--soft);border-radius:12px;padding:12px 14px;margin:18px 0}
-footer{color:var(--muted);font-size:13px;margin-top:28px}
-html.app header.site,html.app footer{display:none}
-html.app .wrap{padding-top:8px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.72 "Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:780px;margin:0 auto;padding:0 18px}
+a{color:var(--primary);text-underline-offset:3px}
+
+/* hero */
+.hero{background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;padding:18px 0 54px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.16),rgba(255,255,255,0) 70%)}
+.topbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;position:relative;z-index:1}
+.brand{display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font:700 21px "Fraunces",Georgia,serif;letter-spacing:.2px}
+.mark{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:10px;background:#F5C451;color:#14347A;font:700 18px "Fraunces",Georgia,serif}
+.topbar nav{display:flex;gap:6px;flex-wrap:wrap}
+.topbar nav a{color:#fff;opacity:.85;text-decoration:none;font-weight:600;font-size:13.5px;padding:6px 12px;border-radius:999px}
+.topbar nav a:hover{opacity:1;background:rgba(255,255,255,.14)}
+.topbar nav a[aria-current]{opacity:1;background:rgba(255,255,255,.2)}
+.eyebrow{margin:34px 0 8px;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#F5C451;position:relative;z-index:1}
+.hero h1{margin:0;font:700 clamp(28px,6.4vw,40px)/1.15 "Fraunces",Georgia,serif;letter-spacing:-.2px;position:relative;z-index:1}
+.lead{margin:12px 0 0;max-width:34em;font-size:16px;opacity:.88;position:relative;z-index:1}
+
+/* document sheet */
+main.wrap{position:relative;margin-top:-30px;padding-bottom:40px}
+.meta{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin:0 0 26px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.meta div{background:var(--surface);padding:12px 16px}
+.meta dt{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.meta dd{margin:2px 0 0;font-weight:600;word-break:break-word}
+@media (max-width:340px){.meta{grid-template-columns:1fr}}
+
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px 20px 12px;margin-bottom:30px}
+.toc h2{margin:0 0 8px;font:700 13px "Manrope",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:28px;counter-reset:t}
+@media (max-width:620px){.toc ol{columns:1}}
+.toc li{counter-increment:t;break-inside:avoid;margin:0 0 6px;font-size:14.5px;line-height:1.45}
+.toc li:before{content:counter(t);display:inline-block;min-width:22px;color:var(--muted);font-weight:700}
+.toc a{text-decoration:none;color:var(--ink)}
+.toc a:hover{color:var(--primary);text-decoration:underline}
+
+.art{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px 10px;margin:0 0 14px;box-shadow:var(--shadow);scroll-margin-top:14px}
+.art h2{display:flex;align-items:center;gap:12px;margin:0 0 12px;font:700 20px/1.3 "Fraunces",Georgia,serif;color:var(--ink)}
+.num{flex:none;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--soft);color:var(--primary);font:700 15px "Manrope",sans-serif}
+.lbl{display:block;font:700 11px "Manrope",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:0 0 1px}
+.art p{margin:0 0 13px}
+.step{border-left:3px solid var(--gold);padding-left:14px;font-weight:600}
+
+/* cards on the index page */
+.cards{display:grid;gap:14px;grid-template-columns:1fr}
+.card{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow)}
+.card:hover{border-color:var(--primary)}
+.card b{display:block;font:700 19px "Fraunces",Georgia,serif;margin-bottom:4px}
+.card span{color:var(--muted);font-size:15px}
+.card em{display:block;margin-top:10px;font-style:normal;font-weight:700;font-size:14px;color:var(--primary)}
+
+footer{background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;padding:26px 0 30px;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer a{color:#fff;opacity:.9;margin-right:14px}
+footer p a:last-child{margin-right:0}
+footer p{margin:0}
+
+/* inside the app: the app already shows its own header */
+html.app .hero,html.app footer{display:none}
+html.app main.wrap{margin-top:0;padding-top:16px}
+
+@media print{.hero,footer,.toc{display:none}.art{box-shadow:none;break-inside:avoid}body{background:#fff;color:#000}}
