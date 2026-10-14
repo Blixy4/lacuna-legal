@@ -18,23 +18,33 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hero"><div class="wrap">
-<div class="topbar"><a class="brand" href="index.html"><span class="mark">L</span>Lacuna</a><nav><a href="privacy.html">Confidentialité</a><a href="terms.html">Conditions</a><a href="delete-account.html">Suppression</a></nav></div>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><span class="mark">L</span>Lacuna</a><nav><a href="privacy.html">Confidentialité</a><a href="terms.html">Conditions</a><a href="delete-account.html">Suppression</a></nav>
+</div></header>
+<main class="wrap"><div class="page">
+<div class="title">
 <p class="eyebrow">Lacuna</p>
 <h1>Documents officiels</h1>
 <p class="lead">Application de préparation aux examens nationaux du Burundi, éditée par HelixNova Inc.</p>
-</div></header>
-<main class="wrap">
-<div class="cards">
-<a class="card" href="privacy.html"><b>Politique de confidentialité</b><span>Données collectées, finalités, hébergement, durée de conservation et droits des Utilisateurs.</span><em>Consulter le document</em></a>
-<a class="card" href="terms.html"><b>Conditions d'utilisation</b><span>Règles d'accès et d'utilisation, propriété intellectuelle et limites de responsabilité.</span><em>Consulter le document</em></a>
-<a class="card" href="delete-account.html"><b>Suppression du compte</b><span>Procédure de suppression définitive du compte et des données associées.</span><em>Consulter la procédure</em></a>
+
 </div>
-</main>
+<div class="docs">
+<a href="privacy.html"><b>Politique de confidentialité</b><span>Données collectées, finalités, hébergement, durée de conservation et droits des Utilisateurs.</span><em>Lire le document</em></a>
+<a href="terms.html"><b>Conditions d'utilisation</b><span>Règles d'accès et d'utilisation, propriété intellectuelle et limites de responsabilité.</span><em>Lire le document</em></a>
+<a href="delete-account.html"><b>Suppression du compte</b><span>Procédure de suppression définitive du compte et des données associées.</span><em>Lire la procédure</em></a>
+</div>
+</div></main>
 <footer><div class="wrap">
-<p>HelixNova Inc. Tous droits réservés. Lacuna, 2026.</p>
-<p><a href="privacy.html">Confidentialité</a> <a href="terms.html">Conditions</a> <a href="delete-account.html">Suppression</a></p>
-<p><a href="mailto:helixnovaepassburundi@gmail.com">helixnovaepassburundi@gmail.com</a></p>
+<p>&copy; <span id="year">2026</span> HelixNova Inc. Tous droits réservés.</p>
+<nav><a href="privacy.html">Confidentialité</a><a href="terms.html">Conditions</a><a href="delete-account.html">Suppression</a><a href="mailto:helixnovaepassburundi@gmail.com?subject=Lacuna">Nous contacter</a></nav>
 </div></footer>
+<script>
+(function(){
+  var y=document.getElementById("year");
+  if(y)y.textContent=new Date().getFullYear();
+  var t=document.querySelector("details.toc");
+  if(t&&window.matchMedia&&window.matchMedia("(min-width:1040px)").matches)t.open=true;
+})();
+</script>
 </body>
 </html>
